@@ -9,6 +9,7 @@ const onlineUsersElement = document.getElementById('online-container')
 let client = {};
 let onlineUsers = {};
 
+const imageArray = ["gif", "jpg", "jpeg", "png", "webm", "GIF"];
 
 // Emitted when opening the page
 socket.emit("new-user", localStorage.token);
@@ -74,6 +75,8 @@ socket.on("message", message => {
 */
 
 function appendMessage(message) {
+  console.log(message.content);
+
   const messageElement = document.createElement('div');
   messageElement.classList.toggle("message");
   const userElement    = document.createElement('span');
@@ -85,12 +88,30 @@ function appendMessage(message) {
   userElement.innerText = message.author.username;
   contentElement.innerText = message.content;
   
+
   messageElement.append(userElement);
   messageElement.append(document.createElement("br"));
   messageElement.append(contentElement);
+
   
+  if (message.content.includes("http")) {
+    const words = message.content.split(" ");
+    const word = words.find(t => t.includes("http"));
+    const temp = word.split(".");
+    if (imageArray.includes(temp[temp.length - 1])) {
+      const imageElement = document.createElement("img");
+      imageElement.classList.toggle('messagePreview');
+      imageElement.src = word;
+      messageElement.append(document.createElement("br"));
+      messageElement.append(imageElement);
+      contentElement.innerHTML = contentElement.innerHTML.replace(word, `<a href='${word}'>${word}</a>`);
+    }
+  }
+
   messageContainer.append(messageElement);
+  
 }
+
 
 function updateOnlineUsers() {
   const onlineUsersOld = document.getElementsByClassName("onlineUser");

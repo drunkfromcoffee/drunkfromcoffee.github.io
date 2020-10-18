@@ -71,3 +71,28 @@ textarea, select, input, button { outline: none; }
   position: absolute;
   left: 0;
 }
+
+.messagePreview {
+  width: 30%;
+  height: 30%;
+}
+
+
+
+a:link {
+  color: #0099ff;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0099ff;
+  background-color: transparent;
+  text-decoration: underline;
+}
