@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <script defer src="https://cdn.jsdelivr.net/npm/socket.io-client@2/dist/socket.io.js"></script>
+        <script defer src="scripts/signup.js"></script>
+        <link rel="stylesheet" href="./css/signup.css">
+    </head>
+    <body>
+        <div id="signup-box">
+            <h2 id="signup-text" style="color: white;top:5%;position:relative; text-align:center;">Sign up</h2>
+            <form id="signup-container">
+                <p class="tooltips">USERNAME</p>
+                <input type="text" id="username-input" autocomplete="off">
+                <p class="tooltips" style="top:35%">PASSWORD</p>
+                <input type="password" id="password-input" autocomplete="off">
+                <p id="error" style="display:none"></p>
+                <button type="submit" id="submit-button">Sign up</button>
+                <p id="login">Already have an account? <a href="login.html">Log in here!</a></p>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+@font-face {
+    font-family: Louis George Cafe;
+    src: url("../resources/Louis\ George\ Cafe.ttf");
+}
+
+#online-container {
+    width: 15%;
+    padding-bottom: 40px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.75);
+  }
+
+.onlineUserText {
+    position: absolute;
+    padding: 18px;
+    padding-top: 8px;
+    color: #b9bbbe;
+    font-family: Louis George Cafe;
+}
+
+.onlineUser {
+    padding: 0px;
+    padding-left: 15px;
+}
+
+.onlineUser:hover {
+    background-color: #4f545c; 
+}
+
+.onlineUserText:hover {
+    color: #dcddde;
+}
+
+.avatar {
+    position: relative;
+    top: 1px;
+    border-radius: 4px;
+    width: 36px;
+    height: 36px;
+}

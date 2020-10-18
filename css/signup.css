@@ -1,0 +1,122 @@
+@font-face {
+    font-family: Comfortaa;
+    src: url("../resources/comfortaa.ttf");  
+}
+
+@font-face {
+    font-family: bebas;
+    src: url("../resources/bebas.ttf");
+}
+
+body {
+    padding:0;
+    margin:0;
+    background-image: url("../resources/login_background.png");
+    background-size: 100%;
+    overflow: hidden;
+}
+
+#signup-text {
+    color: white;
+    top:5%;
+    position:relative; 
+    text-align:center;
+    font-family: bebas;
+    font-size: 30px;    
+    font-weight: 300;
+}
+
+input {
+    position: absolute;
+    border: none;
+    border-radius: 6px;
+    background-color: #82807f;
+    caret-color: white;
+    color: white;
+    font-family: Comfortaa;
+}
+
+#signup-box {
+    position: relative;
+    margin: 5% auto;
+    width: 700px;
+    height: 400px;
+    background: #2f3136;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+#signup-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 700px;
+    height: 400px;
+}
+
+#username-input {
+    top: 20%;
+    left: 15%;  
+    line-height: 45px;
+    font-size: 18px;
+    width: 70%;
+}
+
+#password-input {
+    top:45%;
+    left:15%;
+    line-height: 45px;
+    font-size: 18px;
+    width: 70%;
+}
+
+.tooltips {
+    position: absolute;
+    left: 15%;
+    color: #bababa;
+    font-family: bebas;
+    text-shadow: 1px 1px #82807f;
+}
+
+#submit-button {
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+    background-color: #6699FF;
+    border: none;
+    left: 28%;
+    position: inherit;
+    top: 65%;
+    width: 300px;
+    height: 70px;
+
+}
+
+#login {
+    top: 85%;
+    left: 28%;
+    position: inherit;
+    text-align: center;
+    font-family: Comfortaa;
+}
+
+#error {
+    position: relative;
+    top:57%;
+    text-align: center;
+    color: red;
+}
+
+a:link {
+    color: #6699FF;
+}
+
+a:visited {
+    color: #6699FF;
+}
+
+a:hover {
+    color: turquoise;
+}

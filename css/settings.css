@@ -1,0 +1,81 @@
+@font-face {
+    font-family: JackInput;
+    src: url("../resources/ji.ttf");
+}
+
+#settingsPanel {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background: #36393f;
+}
+
+#settingsButton {    
+    bottom: 1.5%;
+    right: 85.5%;
+    position: absolute;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+}
+
+#avatarSpan {
+    font-family: JackInput;
+    color: white;
+    position: absolute;
+    top: 15%;
+    left: 20%;
+}
+
+#avatarInput {
+    position: absolute;
+    top: 14.8%;
+    left: 25%;
+    height: 26px;
+    background-color: #8e9297;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: 500px;
+}
+
+#applyButton {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    background-color: #6699FF;
+    border: none;
+    left: 55.5%;
+    position: absolute;
+    top: 20%;
+    width: 80px;
+    height: 40px;
+
+}
+
+#fuckGoBack {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    background-color: black;
+    border: none;
+    left: 90%;
+    position: absolute;
+    top: 90%;
+    width: 120px;
+    height: 50px;
+
+}
+
+#previewAvatar {
+    background: white;
+    border: 4px solid;
+    border-color: black;
+    position: absolute;
+    right: 25%;
+    top: 7%;
+    width: 128px;
+    height: 128px;
+}

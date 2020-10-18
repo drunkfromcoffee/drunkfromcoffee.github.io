@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Test Chat App</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/socket.io-client@2/dist/socket.io.js"></script>
+    <script defer src="scripts/chat.js"></script>
+    <script defer src="scripts/settings.js"></script>
+    <script src="scripts/rescale.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/scrollbar.css">
+    <link rel="stylesheet" href="css/online.css">
+    <link rel="stylesheet" href="css/settings.css">
+  </head>
+
+  <body onresize="resize()" onload="resize()">
+      <div id="online-container">
+      </div>
+      <div id="message-container"></div>
+      <input type="image" id="settingsButton" src="resources/settings-icon.png">
+      <form id="send-container">
+        <input type="text" id="message-input" autofocus>
+      </form>
+      <div id="settingsPanel" style="display:none">
+        <span id="avatarSpan">Avatar: </span>
+        <img id="previewAvatar" onerror="this.src='https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3156c5ea-dc48-4f76-89d3-da951996a89e/ddaj3ig-14676682-dc50-4cb1-bdfa-9e52ac0568a1.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMzE1NmM1ZWEtZGM0OC00Zjc2LTg5ZDMtZGE5NTE5OTZhODllXC9kZGFqM2lnLTE0Njc2NjgyLWRjNTAtNGNiMS1iZGZhLTllNTJhYzA1NjhhMS5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.Lh_XBHNxCrPc3XPyeVUHoXbqFw45WBRH4NcjnUDmOpA'"></img>
+        <form id="settingsContainer"> 
+          <input id="avatarInput" autofocus>
+          <button type="submit" id="applyButton">Apply</button>
+        </form>
+        <button type="button" id="fuckGoBack">Fuck! Go back.</button>
+      </div>
+
+  <p id="version" style="top:95%;left:1%;color:white;position:absolute;">2020.9.2.0b</p>
+  </body>
+</html>
