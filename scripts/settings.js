@@ -30,3 +30,12 @@ settingsContainer.addEventListener("submit", e => {
 avatarInput.oninput = () => {
     previewAvatar.src = avatarInput.value;
 }
+
+socket.emit("user-modified", user => {
+    console.log(user.avatarURL);
+    onlineUsers[user.id] = user;
+    if (client.user.id === user.id) {
+        client.user = user;
+    }
+    updateOnlineUsers();
+});

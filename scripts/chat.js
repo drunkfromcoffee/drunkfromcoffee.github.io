@@ -1,13 +1,27 @@
 if (!localStorage.token) {
   window.location.replace("login.html")
 }
+
+if (Notification.permission != "granted") {
+  Notification.requestPermission();
+}
+
+
 const socket = io('https://VitalNiceRoute.acell24.repl.co')
 const messageForm = document.getElementById('send-container')
 const messageContainer = document.getElementById('message-container')
 const messageInput = document.getElementById('message-input')
 const onlineUsersElement = document.getElementById('online-container')
+const notificationContainer = document.getElementById("notificationsContainer")
 let client = {};
 let onlineUsers = {};
+
+const notificationTypes = {
+  "Default": "Notification_Icon_Default.png",
+  "Warning": "Notification_Icon_Warning.png",
+  "Error": "Notification_Icon_Error.png"
+};
+
 
 const imageArray = ["gif", "jpg", "jpeg", "png", "webm", "GIF"];
 
@@ -75,8 +89,7 @@ socket.on("message", message => {
 */
 
 function appendMessage(message) {
-  console.log(message.content);
-
+  // if (message.content.includes("discord.com")) return;
   const messageElement = document.createElement('div');
   messageElement.classList.toggle("message");
   const userElement    = document.createElement('span');
@@ -94,22 +107,40 @@ function appendMessage(message) {
   messageElement.append(contentElement);
 
   
-  if (message.content.includes("http")) {
-    const words = message.content.split(" ");
-    const word = words.find(t => t.includes("http"));
-    const temp = word.split(".");
-    if (imageArray.includes(temp[temp.length - 1])) {
-      const imageElement = document.createElement("img");
-      imageElement.classList.toggle('messagePreview');
-      imageElement.src = word;
-      messageElement.append(document.createElement("br"));
-      messageElement.append(imageElement);
-      contentElement.innerHTML = contentElement.innerHTML.replace(word, `<a href='${word}'>${word}</a>`);
+  linkTest: {
+    if (message.content.includes("http") || message.content.includes("www.")) {
+      let word = '';
+      if (message.content.includes("http"))
+        word = `http${message.content.split("http")[1].split(" ")[0]}`
+      else 
+        word = `www.${message.content.split("www.")[1].split(" ")[0]}`
+      if (!word.includes("://") && word.includes("http")) break linkTest;
+      contentElement.innerHTML = contentElement.innerHTML.replace(word, `<a href='${word.includes("http") ? "" : "http://" + word}'>${word}</a>`);
+      const isImage = imageArray.find(t => word.includes(t));
+      if (isImage && word.includes("http")) {
+        const imageElement = document.createElement("img");
+        imageElement.classList.toggle('messagePreview');
+        imageElement.src = word;
+        messageElement.append(document.createElement("br"));
+        messageElement.append(imageElement);
+      }
     }
   }
 
   messageContainer.append(messageElement);
-  
+
+  if (!document.hasFocus()) {
+    console.log("focus")
+    const audio = new Audio("resources/Notification_Sound.mp3");
+    audio.play();
+    if (Notification.permission === "granted") {
+      const notification = new Notification(message.author.username, {
+        body: message.content,
+        icon: message.author.avatarURL
+      });
+
+    }
+  }
 }
 
 

@@ -1,0 +1,54 @@
+#notificationsContainer {
+	height: 100%;
+}
+.notificationBox {
+	bottom: 0;
+	right: 0;
+	opacity: 0;
+	position: absolute;
+	margin: 5% auto;
+	width: 300px;
+	height: 170px;
+	background: #2f3136;
+	border-radius: 2px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    -webkit-transition: 0.8s ease-in-out;
+    -moz-transition: 0.8s ease-in-out;
+    -o-transition: 0.8s ease-in-out;
+    transition: 0.8s ease-in-out;
+
+}
+
+.animatedNotification {
+	opacity:1;
+	-webkit-transform: translate(-220px,0);
+    -moz-transform: translate(-220px,0) opacity 0.8s;
+    -o-transform: translate(-220px,0) opacity 0.8s;
+    -ms-transform: translate(-200px,0) opacity 0.8s;
+    transform: translate(-220px,0) opacity 0.8s;
+}
+
+.notificationType {
+	border-radius: 1px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	top: 2%;
+	position: absolute;
+	width: 32px;
+	height: 32px;
+
+}
+
+.notificationTitle {
+	position: absolute;
+	font-weight: bold;
+	color: white;
+	left: 5%;
+	top: 23%;
+	font-size: 18px;
+}
+.notificationContent {
+	position: absolute;
+	top: 38%;
+	left: 10%;
+	color: #b5b5b5;
+}
